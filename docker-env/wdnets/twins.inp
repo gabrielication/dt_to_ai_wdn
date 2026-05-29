@@ -1,0 +1,164 @@
+[TITLE]
+
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+ J-63            	416.6667    	83.5        	1               	;
+ J-75            	416.6667    	46.8        	1               	;
+ I-Pump-1        	410.105     	0           	                	;
+ O-Pump-1        	410.105     	0           	                	;
+ 1               	410.105     	0           	                	;
+ 2               	410.105     	0           	                	;
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ R-3             	400         	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ P-342           	R-3             	I-Pump-1        	53.4        	10          	100         	0           	Open  	;
+ P-41            	1               	J-63            	411.739     	10          	100         	0           	Open  	;
+ 1               	2               	J-75            	1000        	12          	100         	0           	Open  	;
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+ ~@Pump-1        	I-Pump-1        	O-Pump-1        	POWER 30	;
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+ 2               	O-Pump-1        	1               	12          	PRV 	0           	0           	;
+ 3               	O-Pump-1        	2               	12          	PRV 	0           	0           	;
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+ 2               	Open
+ 3               	Open
+
+[PATTERNS]
+;ID              	Multipliers
+;
+ 1               	0.33        	0.25        	0.209       	0.209       	0.259       	0.36        
+ 1               	0.529       	0.91        	1.2         	1.299       	1.34        	1.34        
+ 1               	1.32        	1.269       	1.25        	1.25        	1.279       	1.37        
+ 1               	1.519       	1.7         	1.75        	1.669       	0.899       	0.479       
+;
+ 11              	1           
+;
+ ENRG1           	1           	1           	1           	1           	1           	1           
+ ENRG1           	1           	1           	1           	1           	1           	1           
+ ENRG1           	1           	1           	1           	1           	1           	1           
+ ENRG1           	1           	1           	1           	1           	1           
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+
+[CONTROLS]
+
+
+
+
+[RULES]
+
+
+
+
+[ENERGY]
+ Global Efficiency  	75
+ Global Price       	0
+ Global Pattern     	ENRG1
+ Demand Charge      	0
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	0
+ Order Tank            	0
+ Order Wall            	0
+ Global Bulk           	0
+ Global Wall           	0
+ Limiting Potential    	0
+ Roughness Correlation 	0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	720:00 
+ Hydraulic Timestep 	1:00 
+ Quality Timestep   	0:05 
+ Pattern Timestep   	1:00 
+ Pattern Start      	0:00 
+ Report Timestep    	1:00 
+ Report Start       	0:00 
+ Start ClockTime    	12 am
+ Statistic          	NONE
+
+[REPORT]
+ Status             	Full
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	GPM
+ Headloss           	H-W
+ Specific Gravity   	1
+ Viscosity          	1
+ Trials             	20
+ Accuracy           	0.0001
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0
+ Demand Model       	PDA
+ Minimum Pressure   	0
+ Required Pressure  	0.1
+ Pressure Exponent  	0.5
+ Emitter Exponent   	0.5
+ Quality            	AGE mg/L
+ Diffusivity        	0.05
+ Tolerance          	0.01
+
+[COORDINATES]
+;Node            	X-Coord           	Y-Coord
+J-63            	4310038.465       	3782910.018       
+J-75            	4309930.419       	3782906.887       
+I-Pump-1        	4309925.722       	3783010.234       
+O-Pump-1        	4309990.983       	3783010.996       
+1               	4310037.421       	3782962.214       
+2               	4309931.463       	3782959.604       
+R-3             	4309925.200       	3783046.771       
+
+[VERTICES]
+;Link            	X-Coord           	Y-Coord
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+
+[BACKDROP]
+  DIMENSIONS  	4288135.450       	3769383.550       	4316518.430       	3824151.450       
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]
