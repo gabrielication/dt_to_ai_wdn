@@ -64,7 +64,7 @@ The same pipeline without the retrieval stages — the LLM generates code from p
 
 ## Benchmark
 
-The system is evaluated on **37 WNTR coding tasks** organized by difficulty.
+The system is evaluated on **WNTR coding tasks** organized by difficulty.
 
 All tasks use the **Net3** network (`wdnets/net3.inp`) as the benchmark target.
 
